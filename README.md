@@ -1,1 +1,8 @@
 # diffie-hellman_using_python_socket
+In these programs I have tested my new method of solving haackers key guessing problem in Diffie-Hellman key exchange encryption protocol using python socket tool. Python socket runs on python3. First running the server code, it will start listening to establish connection with the server. (note- before running the code run ipconfig to know your ipv4 address. and copy paste it in the code.) Then we can run our client code. It will start communicating with the server. (note- do not forget to switch off the VPN service.) Python socket runs using TCP/IP protocol to make the communication authentic. (note- start two terminals to run the server and the client codes separately.)
+
+Then the server side will generate a random prime number(p) and a random base(b) and send it to the client to establish a secure connection. The client side will receive the number but I have not set to detect the number automatically. So, the client needs to input the received numbers manually.
+
+Then the program will ask to input any positive integer number as secrete private key(y). Then b^y mod p is computed and sent to the serer. The server will receive the computed result(w).
+
+In the server side the code will ask to input a secret private key(x). Then it will compute b^x mod p and will send it(m) to the client. Now, both client and server will compute the same term using the received number as base(b). If the final result does not with p, b, w, m the programs in the both sides will set the result as final private key for encryption and decryption. Else the server will send to the client that there was a security issue and will send a new prime number(p) and a new base(b).
